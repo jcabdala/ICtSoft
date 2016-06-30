@@ -2,10 +2,8 @@ language: python
 python:
   - "3.5"
 # command to install dependencies
-before_install:
-    - pip install coveralls
+install: "pip install coverage"
 # command to run tests
 script: 
-    - python test.py
-after_success:
-    - coveralls
+- coverage run test.py
+- coverage report
